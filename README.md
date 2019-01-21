@@ -2,13 +2,13 @@
 View and/or run MSC files in the Windows\System32 folder for the Microsoft Management Console (mmc.exe)
 
 ## Current Release
-[MSC Explorer 32 Bit]()<br />
-[MSC Explorer 64 Bit]()<br />
+[MSC Explorer 32 Bit](https://github.com/Lateralus138/MSC-Explorer/releases/download/1.1.20.19/MSC.Explorer.x32.exe)<br />
+[MSC Explorer 64 Bit](https://github.com/Lateralus138/MSC-Explorer/releases/download/1.1.20.19/MSC.Explorer.x64.exe)<br />
 [Release Page - Source Files](https://github.com/Lateralus138/MSC-Explorer/releases/latest)
 
 ## Example Code - FileInfo() & AnimateWindowEx() - ShowCase
 ```
-	FileInfo(file := "",select := "")
+FileInfo(file := "",select := "")
 {	data := 0
 	if dataSz := DllCall("Version\GetFileVersionInfoSizeW","WStr",file,"Int",0)
 	{	if DllCall("Version\GetFileVersionInfoW","WStr",file,"Int",0,"UInt",VarSetCapacity(ret,dataSz),"Str",ret)
