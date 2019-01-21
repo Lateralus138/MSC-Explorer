@@ -1,0 +1,179 @@
+﻿Class Gui {
+	__New(guiLabel:="")
+	{	this.guiName:=	guiLabel
+						? 	(SubStr(guiLabel,StrLen(guiLabel))=":")
+								?	guiLabel
+								:	guiLabel ":"
+						:	""
+		this.Options("+LastFound")
+		this.Hwnd:=WinExist()
+		this.Options("-LastFound")
+		this.LabelName:=SubStr(this.guiName,1,StrLen(this.guiName)-1)
+	}
+	Flash(Off:=0)
+	{	global
+		Gui,% this.guiName this.endFuncName(A_ThisFunc),% Off?"Off":""
+	}
+	Options(opts*)
+	{	global
+		Gui,% this.guiName this.listFromArray(opts)
+	}
+	Show(title:="",params*)
+	{	Gui	,	% this.guiName this.endFuncName(A_ThisFunc)
+			,	% params.MaxIndex()?this.listFromArray(params):"",%title%
+	}
+	Hide()
+	{	Gui,% this.guiName this.endFuncName(A_ThisFunc)
+	}
+	Cancel()
+	{	Gui,% this.guiName this.endFuncName(A_ThisFunc)
+	}
+	Destroy()
+	{	Gui,% this.guiName this.endFuncName(A_ThisFunc)
+	}
+	Font(fontName,options*)
+	{	Gui,% this.guiName "Font",% this.listFromArray(options),%fontName%
+	}
+	Margin(x,y)
+	{	Gui,% this.guiName "Margin",%x%,%y%
+	}
+	Color(winClr:=0xFFFFFF,cntrlClr:=0x000000)
+	{	Gui,% this.guiName "Color",% winClr?winClr:0x000000,% cntrlClr?cntrlClr:0x000000
+	}
+	Submit(noHide:=0)
+	{	Gui,% this.guiName "Submit",% noHide?"NoHide":""
+	}
+	Text(content:="",params*)
+	{	global
+		Gui,% this.guiName "Add",% this.endFuncName(A_ThisFunc),% params.MaxIndex()?this.listFromArray(params):"",%content%	
+	}
+	Edit(content:="",params*)
+	{	global
+		Gui,% this.guiName "Add",% this.endFuncName(A_ThisFunc),% params.MaxIndex()?this.listFromArray(params):"",%content%	
+	}
+	UpDown(content:="",params*)
+	{	global
+		Gui,% this.guiName "Add",% this.endFuncName(A_ThisFunc),% params.MaxIndex()?this.listFromArray(params):"",%content%	
+	}
+	Picture(content:="",params*)
+	{	global
+		Gui,% this.guiName "Add",% this.endFuncName(A_ThisFunc),% params.MaxIndex()?this.listFromArray(params):"",%content%	
+	}
+	Button(content:="",params*)
+	{	global
+		Gui,% this.guiName "Add",% this.endFuncName(A_ThisFunc),% params.MaxIndex()?this.listFromArray(params):"",%content%	
+	}
+	Checkbox(content:="",params*)
+	{	global
+		Gui,% this.guiName "Add",% this.endFuncName(A_ThisFunc),% params.MaxIndex()?this.listFromArray(params):"",%content%	
+	}
+	Radio(content:="",params*)
+	{	global
+		Gui,% this.guiName "Add",% this.endFuncName(A_ThisFunc),% params.MaxIndex()?this.listFromArray(params):"",%content%	
+	}
+	DropDownList(content:="",params*)
+	{	global
+		Gui,% this.guiName "Add",% this.endFuncName(A_ThisFunc),% params.MaxIndex()?this.listFromArray(params):"",%content%	
+	}
+	ComboBox(content:="",params*)
+	{	global
+		Gui,% this.guiName "Add",% this.endFuncName(A_ThisFunc),% params.MaxIndex()?this.listFromArray(params):"",%content%	
+	}
+	ListBox(content:="",params*)
+	{	global
+		Gui,% this.guiName "Add",% this.endFuncName(A_ThisFunc),% params.MaxIndex()?this.listFromArray(params):"",%content%	
+	}
+	ListView(content:="",params*)
+	{	global
+		Gui,% this.guiName "Add",% this.endFuncName(A_ThisFunc),% params.MaxIndex()?this.listFromArray(params):"",%content%	
+	}
+	TreeView(content:="",params*)
+	{	global
+		Gui,% this.guiName "Add",% this.endFuncName(A_ThisFunc),% params.MaxIndex()?this.listFromArray(params):"",%content%	
+	}
+	Link(content:="",params*)
+	{	global
+		Gui,% this.guiName "Add",% this.endFuncName(A_ThisFunc),% params.MaxIndex()?this.listFromArray(params):"",%content%	
+	}
+	Hotkey(content:="",params*)
+	{	global
+		Gui,% this.guiName "Add",% this.endFuncName(A_ThisFunc),% params.MaxIndex()?this.listFromArray(params):"",%content%	
+	}
+	DateTime(content:="",params*)
+	{	global
+		Gui,% this.guiName "Add",% this.endFuncName(A_ThisFunc),% params.MaxIndex()?this.listFromArray(params):"",%content%	
+	}
+	MonthCal(content:="",params*)
+	{	global
+		Gui,% this.guiName "Add",% this.endFuncName(A_ThisFunc),% params.MaxIndex()?this.listFromArray(params):"",%content%	
+	}
+	Slider(content:="",params*)
+	{	global
+		Gui,% this.guiName "Add",% this.endFuncName(A_ThisFunc),% params.MaxIndex()?this.listFromArray(params):"",%content%	
+	}
+	Progress(content:="",params*)
+	{	global
+		Gui,% this.guiName "Add",% this.endFuncName(A_ThisFunc),% params.MaxIndex()?this.listFromArray(params):"",%content%	
+	}
+	GroupBox(content:="",params*)
+	{	global
+		Gui,% this.guiName "Add",% this.endFuncName(A_ThisFunc),% params.MaxIndex()?this.listFromArray(params):"",%content%	
+	}
+	Tab3(content:="",params*)
+	{	global
+		Gui,% this.guiName "Add",% this.endFuncName(A_ThisFunc),% params.MaxIndex()?this.listFromArray(params):"",%content%	
+	}
+	StatusBar(content:="",params*)
+	{	global
+		Gui,% this.guiName "Add",% this.endFuncName(A_ThisFunc),% params.MaxIndex()?this.listFromArray(params):"",%content%	
+	}
+	ActiveX(content:="",params*)
+	{	global
+		Gui,% this.guiName "Add",% this.endFuncName(A_ThisFunc),% params.MaxIndex()?this.listFromArray(params):"",%content%	
+	}
+	Custom(content:="",params*)
+	{	global
+		Gui,% this.guiName "Add",% this.endFuncName(A_ThisFunc),% params.MaxIndex()?this.listFromArray(params):"",%content%	
+	}
+	New(content:="",params*)
+	{	global
+		Gui,% this.guiName "New",% params.MaxIndex()?this.listFromArray(params):"",%content%	
+	}
+	endFuncName(funcName)
+	{	return StrSplit(funcName,".")[StrSplit(funcName,".").MaxIndex()]
+	}
+	CustomButton(string,progSize:=100,txtClr:="",x:="+0",y:="+0",w:="",h:="",bgClr:="",fgClr:="",progVar:="",txtVar:="",progHwnd:="",txtHwnd:="",overlay:=false)
+	{	global
+		%progVar%:=progVar?progSize:"",%txtVar%:=txtVar?string:""
+		this.Progress(progSize,"x" x,"y" y,"w" w,"h" h,"Background" bgClr,"c" fgClr,progVar?"v" progVar:"",progHwnd?"Hwnd" progHwnd:"")
+		this.Text(string,txtClr?"c" txtClr:"","xp","yp","w" w,"h" h,"+BackgroundTrans","+Center",0x256,txtVar?"v" txtVar:"",txtHwnd?"Hwnd" txtHwnd:"")
+		if overlay
+			this.OverlayButton(w,h,h "-" h,"Wind","ahk_id " %progHwnd%)
+	}
+	OverlayButton(w,h,radius:="",wind:="",win*)
+	{	if id:=WinExist(win[1],win[2],win[3],win[4])
+		{	if InStr(radius,"-")
+			{	radiusArr:=StrSplit(radius,"-")
+				MsgBox % radiusArr.MaxIndex()
+				if (radiusArr.MaxIndex()=2)
+					radiusArr[1]:=radiusArr[1]-1,radiusArr[2]:=radiusArr[2]-1 ;radiusArr[1]-=1,radiusArr[2]-=1
+				else
+					radiusArr[1]:=30,radiusArr[2]:=30
+			}
+			WinSet,Region,% "1-1 " "w" w-1 " h" h-1 " R" radiusArr[1] "-" radiusArr[2] " " wind,ahk_id %id%
+		}
+	}
+	ButtonSize(textSize,string)
+	{	h:=textSize*3
+		w:=textSize*StrLen(string)
+		return {"W":w,"H":h}
+	}
+	listFromArray(array)
+	{	if array.MaxIndex()
+		{	list:=""
+			for idxi, itemi in array
+				list.=itemi A_Space			
+		}
+		return list
+	}
+}
